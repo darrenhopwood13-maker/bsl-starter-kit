@@ -132,6 +132,7 @@
     .stat{background:#fff!important;border:1px solid #000}
     .stat b{color:#000!important}
     .panel{display:block!important;page-break-inside:avoid}
+    .live,.panel.no-print{display:none!important}
     .card,.tool,.vid,.q{box-shadow:none!important}
     .vid iframe{display:none}
     footer{background:#fff!important;color:#000!important}
@@ -229,6 +230,7 @@
     <p class="sub">Spell any word, at any speed, and drill the letters you keep fumbling.</p>
 
     <div class="tool">
+      <div class="live">
       <label for="word">Type a word to spell</label>
       <input type="text" id="word" value="MY NAME" maxlength="24" autocomplete="off" spellcheck="false">
       <div class="btns">
@@ -239,6 +241,7 @@
         <button class="btn stop" id="halt">Stop</button>
       </div>
       <div id="cards"></div>
+      </div>
       <div class="warn"><b>Honest bit:</b> this tool drills the rhythm, not the handshapes. Get the actual shapes
       from the alphabet video below or the official chart - this page will not pretend to draw a hand, because a
       wrong hand shape is worse than no hand shape.</div>
@@ -256,6 +259,7 @@
     <div class="tool" id="drillbox">
       <p class="meta" style="margin-top:0">A letter appears. Sign it, shout it out, then hit next. The clock runs
       for 60 seconds and the page keeps a list of the letters that tripped you up - go back to those.</p>
+      <div class="live">
       <div class="letterbox" id="dle">A</div>
       <div class="btns">
         <button class="btn go" id="dstart">Start the 60 seconds</button>
@@ -264,6 +268,7 @@
       </div>
       <p class="meta" id="dstat">Not running.</p>
       <p class="meta" id="dtrip"></p>
+      </div>
     </div>
   </section>
 
@@ -392,7 +397,7 @@
   </section>
 
   <!-- ============ 6 ============ -->
-  <section class="panel" id="p6">
+  <section class="panel no-print" id="p6">
     <h2>Six questions</h2>
     <p class="sub">Facts about the language and the community, not handshapes. <span id="score">Score: 0 of 0</span></p>
     <div id="quiz"></div>
