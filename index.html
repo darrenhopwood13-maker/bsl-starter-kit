@@ -96,6 +96,7 @@
   .vid .cap{padding:12px 14px;font-size:15px}
   .vid .cap b{display:block;font-size:17px;margin-bottom:2px}
   .vid .cap span{color:#5A5049}
+  .vid .cap .yl{display:inline-block;margin-top:8px;font-size:14px;font-weight:800}
 
   /* ---------- quiz ---------- */
   .q{background:#fff;border:var(--line);border-radius:16px;padding:16px;box-shadow:5px 5px 0 var(--ink);margin-bottom:14px}
@@ -407,6 +408,12 @@
       One page, no ads, no sign-up, no tracking. Hand it to anyone learning to sign.
     </div>
 
+    <h4>Print it</h4>
+    <p style="margin:0 0 4px">Ctrl+P on a computer, or Share then Print on a phone, turns this page into a
+    plain two or three page fridge sheet - no tabs, no video boxes, just the useful words.
+    There is a ready-made PDF here too:
+    <a href="bsl-starter-kit.pdf">bsl-starter-kit.pdf</a>.</p>
+
     <h4>The honest bit - what this kit cannot do</h4>
     <p style="margin:0">It cannot teach you handshapes on its own, it cannot correct you, and it cannot give you
     a conversation partner. Nothing here replaces a real signer, a real class, or a Deaf friend happy to be
@@ -442,6 +449,20 @@ for (var i = 0; i < pills.length; i++) {
     document.getElementById(this.dataset.p).classList.add('on');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
+}
+
+/* ---------- a plain link under every video, for phone and for print ---------- */
+var vids = document.querySelectorAll('.vid');
+for (var v = 0; v < vids.length; v++) {
+  var f = vids[v].querySelector('iframe');
+  if (!f) continue;
+  var a = document.createElement('a');
+  a.href = f.getAttribute('src').replace('www.youtube-nocookie.com/embed/', 'www.youtube.com/watch?v=');
+  a.target = '_blank';
+  a.rel = 'noopener';
+  a.className = 'yl';
+  a.textContent = 'Open on YouTube';
+  vids[v].querySelector('.cap').appendChild(a);
 }
 
 /* ---------- fingerspelling: spell it ---------- */
