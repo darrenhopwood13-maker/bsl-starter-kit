@@ -123,19 +123,28 @@
     .mascot{flex:0 0 96px}
     body{font-size:17px}
   }
-  /* ---------- print: one fridge sheet ---------- */
+  /* ---------- print: a clean reference sheet ---------- */
   @media print{
-    nav,.pill,.btns,button,input{display:none!important}
-    header{background:#fff!important;color:#000!important;border-bottom:3px solid #000}
+    nav,.pill,.btns,button,input,.live,.panel.no-print,.mascot{display:none!important}
+    body{font-size:14px;line-height:1.45}
+    header{background:#fff!important;color:#000!important;border-bottom:3px solid #000;padding:0 0 10px}
     h1,h1 em{color:#000!important}
-    .lede,.stat span{color:#333!important}
-    .stat{background:#fff!important;border:1px solid #000}
-    .stat b{color:#000!important}
-    .panel{display:block!important;page-break-inside:avoid}
-    .live,.panel.no-print{display:none!important}
-    .card,.tool,.vid,.q{box-shadow:none!important}
+    h1{font-size:27px;margin:6px 0 4px}
+    .lede{font-size:14px;color:#333!important}
+    .stats{gap:7px;margin-top:10px}
+    .stat{background:#fff!important;border:1px solid #000;padding:6px 9px}
+    .stat b{color:#000!important;font-size:17px}
+    .stat span{font-size:11px;color:#333!important}
+    .panel{display:block!important;break-inside:auto}
+    h2{font-size:21px;margin:14px 0 2px;break-after:avoid}
+    h3{font-size:15px;margin:10px 0 3px}
+    .sub{font-size:13px;margin-bottom:8px}
+    .card,.tool,.vid,.q{box-shadow:none!important;padding:9px 12px;margin:8px 0;border-radius:10px}
+    .q,.vid,.stat{break-inside:avoid}
+    .grid2,.grid3{gap:9px}
+    .num{width:24px;height:24px;font-size:14px;flex:0 0 24px;margin-right:8px}
     .vid iframe{display:none}
-    footer{background:#fff!important;color:#000!important}
+    footer{background:#fff!important;color:#000!important;padding:14px 0 20px;font-size:12px}
     footer a,.src a{color:#000!important;background:#fff!important;border:1px solid #999}
     a{color:#000!important;text-decoration:underline}
   }
@@ -414,9 +423,9 @@
     </div>
 
     <h4>Print it</h4>
-    <p style="margin:0 0 4px">Ctrl+P on a computer, or Share then Print on a phone, turns this page into a
-    plain two or three page fridge sheet - no tabs, no video boxes, just the useful words.
-    There is a ready-made PDF here too:
+    <p style="margin:0 0 4px">Ctrl+P on a computer, or Share then Print on a phone, gives a clean print-out of
+    everything on this page - no tabs, no buttons, no video boxes, just the words in black and white.
+    A ready-made PDF sits here too:
     <a href="bsl-starter-kit.pdf">bsl-starter-kit.pdf</a>.</p>
 
     <h4>The honest bit - what this kit cannot do</h4>
